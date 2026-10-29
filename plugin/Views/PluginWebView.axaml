@@ -1,0 +1,19 @@
+<shad:ShadWindow
+    CanPin="True"
+    WindowStartupLocation="CenterScreen"
+    xmlns="https://github.com/avaloniaui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:i="using:Avalonia.Xaml.Interactivity"
+    xmlns:behaviors="using:MioKit.Sdk.Behaviors"
+    xmlns:expression="using:Expression"
+    xmlns:webview2="clr-namespace:MioKit.Webview2;assembly=MioKit.Webview2"
+    xmlns:shad="https://github.com/tiny-isle/Ti.Avalonia.Shadcn"
+    Height="750"
+    Width="1000"
+    Title="表达式脚本工作台"
+    x:Class="Expression.Views.PluginWebView">
+    <i:Interaction.Behaviors>
+        <behaviors:PluginWindowBehavior Type="{x:Static expression:ExpressionConst.PluginId}" />
+    </i:Interaction.Behaviors>
+    <webview2:MioWebview2 x:Name="WebView" />
+</shad:ShadWindow>

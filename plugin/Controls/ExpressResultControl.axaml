@@ -1,0 +1,65 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             x:Class="Expression.Controls.ExpressResultControl"
+             x:Name="Root"
+             MinHeight="72">
+  <Grid ColumnDefinitions="*,Auto,*"
+        RowDefinitions="Auto,*"
+        Width="760"
+        MinHeight="72"
+        ColumnSpacing="16">
+    <TextBlock Text="表达式"
+               HorizontalAlignment="Center"
+               FontSize="13"
+               Foreground="{DynamicResource ShadDisabledTextBrush}" />
+
+    <TextBlock Grid.Column="2"
+               Text="结果"
+               HorizontalAlignment="Center"
+               FontSize="13"
+               Foreground="{DynamicResource ShadDisabledTextBrush}" />
+
+    <TextBlock Grid.Row="1"
+               Text="{Binding Expression, ElementName=Root}"
+               FontSize="16"
+               FontWeight="SemiBold"
+               MaxWidth="320"
+               TextWrapping="NoWrap"
+               TextTrimming="CharacterEllipsis"
+               HorizontalAlignment="Center"
+               VerticalAlignment="Center" />
+
+    <TextBlock Grid.Row="1"
+               Grid.Column="1"
+               Text="="
+               FontSize="18"
+               FontWeight="SemiBold"
+               Foreground="{DynamicResource ShadMutedForegroundBrush}"
+               VerticalAlignment="Center" />
+
+    <StackPanel Grid.Row="1"
+                Grid.Column="2"
+                Orientation="Horizontal"
+                Spacing="8"
+                HorizontalAlignment="Center"
+                VerticalAlignment="Center">
+      <ProgressBar Width="80"
+                   Height="4"
+                   IsIndeterminate="True"
+                   IsVisible="{Binding IsLoading, ElementName=Root}" />
+      <TextBlock Text="{Binding ExpressionResult, ElementName=Root}"
+                 FontSize="16"
+                 FontWeight="SemiBold"
+                 MaxWidth="320"
+                 TextWrapping="NoWrap"
+                 TextTrimming="CharacterEllipsis"
+                 VerticalAlignment="Center" />
+      <TextBlock Text="!"
+                 FontSize="16"
+                 FontWeight="Bold"
+                 Foreground="{DynamicResource ShadDangerBrush}"
+                 IsVisible="{Binding HasError, ElementName=Root}"
+                 ToolTip.Tip="{Binding ErrorMessage, ElementName=Root}" />
+    </StackPanel>
+  </Grid>
+</UserControl>

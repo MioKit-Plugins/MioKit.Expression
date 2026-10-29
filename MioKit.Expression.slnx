@@ -1,0 +1,11 @@
+<Solution>
+  <Folder Name="/Plugin/">
+    <Project Path="plugin/MioKit.Expression.csproj" />
+  </Folder>
+  <Folder Name="/Preview/">
+    <Project Path="preview/MioKit.Expression.Preview.csproj" />
+  </Folder>
+  <Folder Name="/Tests/">
+    <Project Path="tests/MioKit.Expression.Tests.csproj" />
+  </Folder>
+</Solution>

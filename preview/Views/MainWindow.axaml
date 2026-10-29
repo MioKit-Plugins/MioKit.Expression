@@ -1,0 +1,30 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:shad="https://github.com/tiny-isle/Ti.Avalonia.Shadcn"
+        x:Class="Expression.Preview.Views.MainWindow"
+        Title="MioKit Plugin Preview"
+        Width="960"
+        Height="640"
+        MinWidth="720"
+        MinHeight="480"
+        WindowStartupLocation="CenterScreen"
+        Background="{DynamicResource ShadBackgroundBrush}">
+  <ScrollViewer>
+  <StackPanel Margin="24" Spacing="20">
+    <shad:Card Title="插件控件"
+               Description="在 MainWindow.axaml.cs 的 LoadPluginPreview() 中实例化你的视图。">
+      <Border Margin="24,0"
+              MinHeight="200"
+              Padding="16"
+              CornerRadius="{DynamicResource ShadCornerRadius}"
+              Background="{DynamicResource ShadCardBrush}"
+              BorderBrush="{DynamicResource ShadBorderBrush}"
+              BorderThickness="1">
+        <ContentControl x:Name="PluginPreviewHost"
+                        HorizontalAlignment="Stretch"
+                        VerticalAlignment="Stretch" />
+      </Border>
+    </shad:Card>
+  </StackPanel>
+  </ScrollViewer>
+</Window>
