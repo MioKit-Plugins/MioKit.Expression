@@ -78,3 +78,5 @@ dotnet build MioKit.Expression.slnx -c Release
 ```powershell
 .\pack.ps1 -PackageVersion 1.0.1
 ```
+
+输出：`artifacts/MioKit.Expression.<version>.nupkg`。推送 `v*` 标签（如 `v1.0.1`）后，GitHub Actions 会用同一脚本打包，并把 `.nupkg` 挂到对应 GitHub Release（不自动发布到 NuGet）。
